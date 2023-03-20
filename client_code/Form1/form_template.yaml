@@ -7,4 +7,35 @@ components:
   properties: {col_widths: '{}'}
   name: column_panel_1
   layout_properties: {slot: default}
-  components: []
+  components:
+  - type: Label
+    properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Anime 365 batch download, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'ZGPSIW,EXUTAO'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'ZNTJQB,BXABQF'}
+    components:
+    - type: Label
+      properties: {role: input-prompt, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Anime Id, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'VNVXNG,IPJVTD'}
+    - type: TextBox
+      properties: {}
+      name: anime_id
+      layout_properties: {grid_position: 'VNVXNG,NSMNTY'}
+  - type: Button
+    properties: {role: filled, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: load, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: load_button
+    layout_properties: {grid_position: 'TQNMZW,DAARJY'}
+    event_bindings: {click: load_button_click}
