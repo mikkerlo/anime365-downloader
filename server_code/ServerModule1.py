@@ -15,4 +15,4 @@ import anvil.http as http
 #
 @anvil.server.callable
 def get_anime_request(url):
-  return http.request(url, headers={"User-Agent": "mikkerloAnimeDownload"})
+  return http.request(url, headers={"User-Agent": "mikkerloAnimeDownload"}, json=True)
