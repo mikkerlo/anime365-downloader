@@ -143,6 +143,13 @@ class Form1(Form1Template):
       anime_info.episodes.append(ep_info)
     return anime_info
 
-
-    
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    urls = ""
+    for ep_ui in self.ep_ui.get_components():
+      if ep_ui.enabled_button.checked:
+        urls += ep_ui.download_ep.url + "\n"
+        urls += ep_ui.download_subtitles.url + "\n"
+    if urls != "":
+      self.call_js("copyclip", urls)
 

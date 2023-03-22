@@ -95,3 +95,11 @@ components:
     properties: {item_template: Form1.ItemTemplate1}
     name: ep_ui
     layout_properties: {grid_position: 'WVYAMQ,CESNXK'}
+  - type: Button
+    properties: {role: outlined, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: copy_all, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'HFPYLP,UBYMVD'}
+    event_bindings: {click: button_1_click}
