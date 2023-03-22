@@ -129,6 +129,8 @@ class Form1(Form1Template):
       ep_info = EpInfo.from_ep_data(ep)
       print(ep)
       tr_data = Form1.make_query(f"http://smotret-anime.ru/api/episodes/{ep['id']}")
+      if 'translations' not in tr_data['data']:
+        continue
       for tr in tr_data['data']['translations']:
         if tr['type'] not in [i[1] for i in Form1.ANIME_TYPES]:
           print(tr['type'])
