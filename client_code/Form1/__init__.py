@@ -59,11 +59,16 @@ class Form1(Form1Template):
       self.label_tr.visible = False
       self.tr_author.visible = False
       self.counter.visible = False
+      self.label_name_d.visible = False
+      self.label_name.visible = False
       return
 
     self.label_tr.visible = True
     self.tr_author.visible = True
     self.counter.visible = True
+    self.label_name_d.visible = True
+    self.label_name.text = self.anime_info.anime_name
+    self.label_name.visible = True
 
   @staticmethod
   def make_query(url):
@@ -85,7 +90,7 @@ class Form1(Form1Template):
     self.load_button.enabled = False
     anime_id = int(self.anime_id.text)
     tr_type = self.tr_type.selected_value
-    print(anime_id)
+    #print(anime_id)
     self.anime_info = self.get_anime_ep_info(anime_id, tr_type)
     self.load_button.enabled = True
     episodes = self.anime_info.episodes
@@ -154,4 +159,21 @@ class Form1(Form1Template):
         urls += ep_ui.download_subtitles.url + "\n"
     if urls != "":
       self.call_js("copyclip", urls)
+
+  def button_direct_copy_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    urls = []
+    access_token = self.api_token_box.text
+    for ep_ui in self.ep_ui.get_components():
+      if not ep_ui.enabled_button.checked:
+        continue
+      tr_id = ep_ui.download_ep.tr_id
+      name = f"{self.anime_info.anime_name} - {int(ep_ui.ep_info.episodeInt):02d}"
+      url = anvil.server.call('get_direct_link', tr_id, name, access_token)
+      print(url)
+      urls.append('url:', url)
+    total = '\n'.join(urls)
+    if total != '':
+      self.call_js('copyclip', total)
+
 
