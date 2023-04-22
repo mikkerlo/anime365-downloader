@@ -1,4 +1,5 @@
 from ._anvil_designer import Form1Template
+from anvil_extras.storage import local_storage
 from anvil import *
 import anvil.server
 import anvil.http as http
@@ -52,6 +53,7 @@ class Form1(Form1Template):
     # Any code you write here will run before the form opens.
     self.tr_type.items = self.ANIME_TYPES
     self.anime_info = None
+    self.load_preferences()
     self.update_later()
 
   def update_later(self):
@@ -70,6 +72,15 @@ class Form1(Form1Template):
     self.label_name.text = self.anime_info.anime_name
     self.label_name.visible = True
 
+  def save_preferences(self):
+    if self.api_token_box.text != '':
+      local_storage['access_token'] = self.api_token_box.text
+    local_storage['tr_type'] = self.tr_type.selected_value
+
+  def load_preferences(self):
+    self.api_token_box.text = local_storage.get('access_token', '')
+    self.tr_type.selected_value = local_storage.get('tr_type', ANIME_TYPES[0][1])
+
   @staticmethod
   def make_query(url):
     return anvil.server.call('get_anime_request', url)
@@ -87,6 +98,7 @@ class Form1(Form1Template):
   
   def load_button_click(self, **event_args):
     """This method is called when the button is clicked"""
+    self.save_preferences()
     self.load_button.enabled = False
     anime_id = int(self.anime_id.text)
     tr_type = self.tr_type.selected_value
@@ -102,6 +114,7 @@ class Form1(Form1Template):
     self.tr_author.items = [('', None)] + [(i, i) for i in tr_authors]
     self.ep_ui.items = [{"epInfo": ep} for ep in self.anime_info.episodes]
     self.update_later()
+
     pass
 
   def update_on_default_tr(self, **event_args):
