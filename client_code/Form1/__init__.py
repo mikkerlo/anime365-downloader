@@ -79,7 +79,7 @@ class Form1(Form1Template):
 
   def load_preferences(self):
     self.api_token_box.text = local_storage.get('access_token', '')
-    self.tr_type.selected_value = local_storage.get('tr_type', ANIME_TYPES[0][1])
+    self.tr_type.selected_value = local_storage.get('tr_type', self.ANIME_TYPES[0][1])
 
   @staticmethod
   def make_query(url):
@@ -183,8 +183,8 @@ class Form1(Form1Template):
       tr_id = ep_ui.download_ep.tr_id
       name = f"{self.anime_info.anime_name} - {int(ep_ui.ep_info.episodeInt):02d}"
       url = anvil.server.call('get_direct_link', tr_id, name, access_token)
-      print(url)
-      urls.append('url:', url)
+      print('url:', url)
+      urls.append(url)
     total = '\n'.join(urls)
     if total != '':
       self.call_js('copyclip', total)
