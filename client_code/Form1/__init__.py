@@ -3,6 +3,7 @@ from anvil_extras.storage import local_storage
 from anvil import *
 import anvil.server
 import anvil.http as http
+from anvil.js.window import navigator
 import json
 
 class TrInfo():
@@ -187,6 +188,6 @@ class Form1(Form1Template):
       urls.append(url)
     total = '\n'.join(urls)
     if total != '':
-      self.call_js('copyclip', total)
-
+      anime_links = BlobMedia('text/plain', total.encode(), name='anime.links')
+      media.download(anime_links)
 
