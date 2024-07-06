@@ -9,10 +9,7 @@ components:
   layout_properties: {slot: default}
   components:
   - type: Label
-    properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Anime 365 batch download, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+    properties: {role: headline, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Anime 365 batch download}
     name: label_1
     layout_properties: {grid_position: 'ZGPSIW,EXUTAO'}
   - type: ColumnPanel
@@ -21,54 +18,42 @@ components:
     layout_properties: {grid_position: 'ZNTJQB,BXABQF'}
     components:
     - type: Label
-      properties: {role: input-prompt, align: left, tooltip: '', border: '', foreground: '',
-        visible: true, text: Anime Id, font_size: null, font: '', spacing_above: small,
-        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-        underline: false, icon: ''}
+      properties: {role: input-prompt, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Anime Id}
       name: label_2
       layout_properties: {grid_position: 'VNVXNG,IPJVTD'}
     - type: TextBox
-      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-        font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
-        background: '', bold: false, underline: false}
+      properties: {role: null, bold: false, align: left, placeholder: '', spacing_above: small, background: '', type: number, underline: false, font: '', hide_text: false, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: ''}
       name: anime_id
       layout_properties: {grid_position: 'VNVXNG,NSMNTY'}
       event_bindings: {pressed_enter: load_button_click}
   - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Translation type, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+    properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Translation type}
     name: label_3
     layout_properties: {grid_position: 'TQNMZW,RVFIKF'}
   - type: DropDown
     properties:
       role: null
+      include_placeholder: false
+      bold: false
       align: full
-      tooltip: ''
       placeholder: ''
-      border: ''
-      enabled: true
+      spacing_above: small
+      background: ''
+      underline: false
+      font: ''
       foreground: ''
       items: ['[(1, 2)]', '1']
-      visible: true
-      font_size: null
-      font: ''
-      spacing_above: small
       spacing_below: small
+      visible: true
+      border: ''
       italic: false
-      background: ''
-      bold: false
-      underline: false
-      include_placeholder: false
+      enabled: true
+      font_size: null
+      tooltip: ''
     name: tr_type
     layout_properties: {grid_position: 'TQNMZW,SCXAYQ'}
   - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Token for direct links, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+    properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Token for direct links}
     name: label_4
     layout_properties: {grid_position: 'AFTZMD,CAVEZK'}
   - type: TextBox
@@ -76,32 +61,20 @@ components:
     name: api_token_box
     layout_properties: {grid_position: 'AFTZMD,QWCKQU'}
   - type: Button
-    properties: {role: filled, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: load, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+    properties: {role: filled, bold: false, align: center, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: load}
     name: load_button
     layout_properties: {grid_position: 'RJIRFT,IEOZGC'}
     event_bindings: {click: load_button_click}
   - type: Label
-    properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
-      visible: false, text: 'Anime name: ', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+    properties: {role: headline, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: false, border: '', italic: false, font_size: null, tooltip: '', text: 'Anime name: '}
     name: label_name_d
     layout_properties: {grid_position: 'FKOWQU,PCQBFL'}
   - type: Label
-    properties: {role: body, align: left, tooltip: '', border: '', foreground: '',
-      visible: false, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
+    properties: {role: body, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: false, border: '', italic: false, font_size: null, tooltip: '', text: ''}
     name: label_name
     layout_properties: {grid_position: 'FKOWQU,MXGBYN'}
   - type: Label
-    properties: {role: input-prompt, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Choose translation author, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+    properties: {role: input-prompt, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Choose translation author}
     name: label_tr
     layout_properties: {grid_position: 'DDXTTS,ODZLSF'}
   - type: DropDown
@@ -110,10 +83,7 @@ components:
     layout_properties: {grid_position: 'DDXTTS,SWKQJO'}
     event_bindings: {change: update_on_default_tr, show: update_on_default_tr, hide: tr_author_hide}
   - type: Label
-    properties: {role: input-prompt, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 5/10, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+    properties: {role: input-prompt, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: 5/10}
     name: counter
     layout_properties: {grid_position: 'DDXTTS,QWTYAF'}
   - type: RepeatingPanel
@@ -121,18 +91,12 @@ components:
     name: ep_ui
     layout_properties: {grid_position: 'WVYAMQ,CESNXK'}
   - type: Button
-    properties: {role: outlined, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: copy_all, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+    properties: {role: outlined, bold: false, align: center, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: copy_all}
     name: button_1
     layout_properties: {grid_position: 'CKKARL,BJJGVK'}
     event_bindings: {click: button_1_click}
   - type: Button
-    properties: {role: outlined, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Copy direct, font_size: null, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false, icon: ''}
+    properties: {role: outlined, bold: false, align: center, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: Copy direct}
     name: button_direct_copy
     layout_properties: {grid_position: 'CKKARL,AQPOZV'}
     event_bindings: {click: button_direct_copy_click}

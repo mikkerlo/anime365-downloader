@@ -151,12 +151,14 @@ class Form1(Form1Template):
       if 'translations' not in tr_data['data']:
         continue
       for tr in tr_data['data']['translations']:
+        print(tr)
         if tr['type'] not in [i[1] for i in Form1.ANIME_TYPES]:
-          print(tr['type'])
           continue
         if tr['type'] != tr_type:
           continue
-        if tr['height'] != 1080:
+        if tr['height'] < 1080:
+          continue
+        if tr['isActive'] != 1:
           continue
         print(tr)
         tr_info = TrInfo.from_tr_data(tr)
