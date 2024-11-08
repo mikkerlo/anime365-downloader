@@ -1,26 +1,26 @@
-container:
-  type: ColumnPanel
-  properties: {col_widths: '{}'}
 components:
-- type: CheckBox
-  properties: {role: null, align: left, tooltip: '', border: '', enabled: true, foreground: '', allow_indeterminate: false, visible: true, text: Active, font_size: null, font: '', spacing_above: small, spacing_below: small, italic: false, background: '', bold: false, checked: true, underline: false}
+- layout_properties: {grid_position: 'DCYWAT,OVEXBZ'}
   name: enabled_button
-  layout_properties: {grid_position: 'DCYWAT,OVEXBZ'}
-- type: Label
-  properties: {}
+  properties: {align: left, allow_indeterminate: false, background: '', bold: false, border: '', checked: true, enabled: true, font: '', font_size: null, foreground: '', italic: false, role: null, spacing_above: small, spacing_below: small, text: Active, tooltip: '', underline: false, visible: true}
+  type: CheckBox
+- layout_properties: {grid_position: 'DCYWAT,RMCBTV'}
   name: episodeName
-  layout_properties: {grid_position: 'DCYWAT,RMCBTV'}
-- type: DropDown
   properties: {}
-  name: tr_author_1
+  type: Label
+- event_bindings: {change: update_dropdown, show: update_dropdown}
   layout_properties: {grid_position: 'DCYWAT,YAFIBO'}
-  event_bindings: {change: update_dropdown, show: update_dropdown}
-- type: Link
-  properties: {role: title, url: '', align: left, tooltip: '', border: '', foreground: '', visible: true, text: Download video, font_size: null, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '', spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
+  name: tr_author_1
+  properties: {}
+  type: DropDown
+- layout_properties: {grid_position: 'DCYWAT,LWPFSO'}
   name: download_ep
-  layout_properties: {grid_position: 'DCYWAT,LWPFSO'}
-- type: Link
-  properties: {role: title, url: '', align: left, tooltip: '', border: '', foreground: '', visible: true, text: Download subtitles, font_size: null, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '', spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
+  properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: title, spacing_above: small, spacing_below: small, text: Download video, tooltip: '', underline: false, url: '', visible: true, wrap_on: mobile}
+  type: Link
+- layout_properties: {grid_position: 'DCYWAT,MEWOAW'}
   name: download_subtitles
-  layout_properties: {grid_position: 'DCYWAT,MEWOAW'}
+  properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: title, spacing_above: small, spacing_below: small, text: Download subtitles, tooltip: '', underline: false, url: '', visible: true, wrap_on: mobile}
+  type: Link
+container:
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
 is_package: true

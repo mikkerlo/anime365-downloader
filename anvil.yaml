@@ -1,14 +1,14 @@
+allow_embedding: false
 dependencies:
 - app_id: C6ZZPAPN4YYF5NVJ
   version: {dev: false}
-services:
-- source: /runtime/services/tables.yml
-  client_config: {}
-  server_config: {}
-package_name: Anime365_downloader
-allow_embedding: false
-name: Anime365 downloader
-runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox, server_spec: null}
 metadata: {title: Anime365 downloader}
-startup_form: Form1
+name: Anime365 downloader
 native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet" rel="preload" as="font" crossorigin="anonymous">'}
+package_name: Anime365_downloader
+runtime_options: {client_version: '3', server_spec: null, server_version: python3-sandbox, version: 2}
+services:
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/tables.yml
+startup_form: Form1

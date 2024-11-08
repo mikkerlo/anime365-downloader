@@ -1,11 +1,11 @@
 unique_ids:
+  assets:
+    standard-page.html: WNMMOQXFW5DHWJMTHEYBD6SEBZ4DCNJN
+    theme.css: 5GGVLVZY7W2AAIDMQ5AHVCNZBUJ2PG73
   forms:
     Form1: 2G6FG5ASNBOPLUI5ZPO46GQ7HRVQAMIW
     Form1.ItemTemplate1: '1679274632035995820663496.8551'
   modules: {}
+  scripts: {}
   server_modules:
     ServerModule1: '1679271534975581889218530.0602'
-  assets:
-    standard-page.html: WNMMOQXFW5DHWJMTHEYBD6SEBZ4DCNJN
-    theme.css: 5GGVLVZY7W2AAIDMQ5AHVCNZBUJ2PG73
-  scripts: {}
