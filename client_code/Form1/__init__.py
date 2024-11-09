@@ -184,7 +184,12 @@ class Form1(Form1Template):
       if not ep_ui.enabled_button.checked:
         continue
       tr_id = ep_ui.download_ep.tr_id
-      name = f"{self.anime_info.anime_name} - {float(ep_ui.ep_info.episodeInt):02f}"
+      episode_number = ep_ui.ep_info.episodeInt
+      if episode_number % 1 == 0.5:
+          formatted_number = f"{int(episode_number):02d}.5"
+      else:
+          formatted_number = f"{int(episode_number):02d}"
+      name = f"{self.anime_info.anime_name} - {formatted_number}"
       url = anvil.server.call('get_direct_link', tr_id, name, access_token)
       print('url:', url)
       urls.append(url)
