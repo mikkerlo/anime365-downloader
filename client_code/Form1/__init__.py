@@ -184,9 +184,11 @@ class Form1(Form1Template):
       if not ep_ui.enabled_button.checked:
         continue
       tr_id = ep_ui.download_ep.tr_id
-      episode_number = ep_ui.ep_info.episodeInt
-      if episode_number % 1 == 0.5:
-          formatted_number = f"{int(episode_number):02d}.5"
+      # ep_ui.ep_info.episodeInt is string, but who cares?
+      episode_number = float(ep_ui.ep_info.episodeInt)
+      fractional_part = round(episode_number % 1, 1)
+      if fractional_part:
+          formatted_number = f"{int(episode_number):02d}.{fractional_part}"
       else:
           formatted_number = f"{int(episode_number):02d}"
       name = f"{self.anime_info.anime_name} - {formatted_number}"
